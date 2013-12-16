@@ -17,6 +17,7 @@ define(["dcl/dcl", "dojo/on", "dojo/keys", "dojo/dom-attr",
 			this.setAttribute("tabindex", "0");
 			this.own(on(this, "keydown", this._keyDownHandler.bind(this)));
 			this.own(on(this, "pointerdown", this._pointerDownHandler.bind(this)));
+			this.setAttribute("tabindex", "0");
 		},
 
 		createRenderer: dcl.superCall(function (sup) {
@@ -106,7 +107,8 @@ define(["dcl/dcl", "dojo/on", "dojo/keys", "dojo/dom-attr",
 				//this.itemToRenderer[this.getIdentity(selected)].setAttribute("aria-selected", true);
 				this.itemToRenderer[this.getIdentity(selected)].setAttribute("tabIndex", "0");
 				this.itemToRenderer[this.getIdentity(selected)].focus();
-				event.stop(e);
+				e.preventDefault();
+				e.stopPropagation();
 			}
 		}
 	});
