@@ -124,7 +124,7 @@ define(["dojo/_base/lang", "dcl/dcl", "dui/register", "dojo/_base/Color",
 			this.own(on(this, "pointerover", lang.hitch(this, this._pointerOverHandler)));
 			this.own(on(this, "pointerout", lang.hitch(this, this._pointerOutHandler)));
 			this.own(on(this, "pointerup", lang.hitch(this, this._pointerUpHandler)));
-			this.setAttribute("role", "presentation");
+			this.setAttribute("role", "group");
 			this.setAttribute("aria-label", "treemap");
 		},
 
@@ -250,6 +250,11 @@ define(["dojo/_base/lang", "dcl/dcl", "dui/register", "dojo/_base/Color",
 			// tags:
 			//		protected					
 			var div = domConstruct.create("div");
+			if (kind === "leaf") {
+				div.setAttribute("role", "treeitem");
+			} else if (kind === "group") {
+				div.setAttribute("role", "group");
+			}
 			if (kind !== "header") {
 				domStyle.set(div, "overflow", "hidden");
 				domStyle.set(div, "position", "absolute");

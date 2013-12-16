@@ -14,6 +14,7 @@ define(["dojo/_base/lang", "dojo/_base/event", "dcl/dcl", "dojo/on", "dojo/keys"
 		},
 
 		postCreate: function () {
+			this.setAttribute("tabindex", "0");
 			this.own(on(this, "keydown", lang.hitch(this, this._keyDownHandler)));
 			this.own(on(this, "pointerdown", lang.hitch(this, this._pointerDownHandler)));
 		},
@@ -99,7 +100,11 @@ define(["dojo/_base/lang", "dojo/_base/event", "dcl/dcl", "dojo/on", "dojo/keys"
 
 		_selectItem: function (e, selected) {
 			if (!this._isRoot(selected)) {
+				this.itemToRenderer[this.getIdentity(this.selectedItem)].setAttribute("tabIndex", "-1");
 				this.selectedItem = selected;
+				//this.itemToRenderer[this.getIdentity(selected)].setAttribute("aria-selected", true);
+				this.itemToRenderer[this.getIdentity(selected)].setAttribute("tabIndex", "0");
+				this.itemToRenderer[this.getIdentity(selected)].focus();
 				event.stop(e);
 			}
 		}
