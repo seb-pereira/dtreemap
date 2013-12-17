@@ -22,12 +22,12 @@ An example of a treemap is shown below. The treemap shows business sectors at th
 Before proceeding checkout [setup page](setup) on how to setup a project using dtreemap. This will be required to leverage the samples from this page.
 
 ##### Table of Contents
-[Element Instantiation](#instantiation)
-[Element Configuration](#configuration)
-[Element Styling](#styling)
-[User Interactions](#interactions)
-[Mixins](#mixins)
-[Element Events](#events)
+[Element Instantiation](#instantiation)  
+[Element Configuration](#configuration)  
+[Element Styling](#styling)  
+[User Interactions](#interactions)  
+[Mixins](#mixins)  
+[Element Events](#events)  
 
 <a name="instantiation"></a>
 ## Element Instantiation
