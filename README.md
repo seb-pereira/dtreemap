@@ -29,6 +29,7 @@ This project requires the following other projects to run:
  * dcl
  * dcolor
  * dpointer
+ * dstore
 
 ## Installation
 
